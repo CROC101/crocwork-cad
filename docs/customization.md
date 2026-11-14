@@ -1,9 +1,9 @@
-# Customizing and automating CADCraft
+# Customizing and automating crocwork CAD
 
-What you can use today to automate CADCraft or bring over add-ons written for other CAD programs,
+What you can use today to automate crocwork CAD or bring over add-ons written for other CAD programs,
 and what is not there yet.
 
-| You have | In CADCraft | More |
+| You have | In crocwork CAD | More |
 |---|---|---|
 | LISP routines (`.lsp`) | Run with APPLOAD or `(load "name")`. The core language, `command`, entity lists, selection sets, `get…` input and `c:` commands work. | [autolisp.md](autolisp.md) |
 | Startup LISP (`acad.lsp`, `acaddoc.lsp`) | Loaded from the support folder at startup and for each drawing. | [autolisp.md](autolisp.md#at-startup) |
@@ -47,7 +47,7 @@ the Command Aliases dialog (or with ALIASEDIT's `set`, `remove` and `clear`) are
 restart, and REINIT reads the same file again. The headless CLI keeps no preferences: there,
 aliases last for that run.
 
-## Driving CADCraft from another program
+## Driving crocwork CAD from another program
 
 Every command has a JSON form that runs without dialogs. `cadcraft-cli commands [FILTER]` prints
 the catalog: each command's id and its parameters.

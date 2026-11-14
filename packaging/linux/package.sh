@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build and package CADCraft for Linux (<arch> is x86_64 or aarch64, or riscv64 when cross-compiling):
+# Build and package crocwork CAD for Linux (<arch> is x86_64 or aarch64, or riscv64 when cross-compiling):
 #
 #   $DIST/cadcraft-<version>-linux-<arch>.AppImage  any distro with glibc >= the build host's
 #   $DIST/cadcraft-<version>-linux-<arch>.AppImage.zsync  delta updates (needs zsyncmake)
@@ -39,10 +39,10 @@ case "$ARCH" in
   aarch64 | arm64) ARCH=aarch64; DEB_ARCH=arm64 ;;
   *) echo "unsupported architecture $ARCH" >&2; exit 2 ;;
 esac
-export CADCRAFT_MAINTAINER="${CADCRAFT_MAINTAINER:-CADCraft maintainers <cadcraft@storyteller.ai>}"
+export CADCRAFT_MAINTAINER="${CADCRAFT_MAINTAINER:-crocwork CAD maintainers <cadcraft@storyteller.ai>}"
 BASENAME="cadcraft-$VERSION-linux-$ARCH"
 
-echo "==> CADCraft $VERSION for Linux $ARCH ($FORMATS)"
+echo "==> crocwork CAD $VERSION for Linux $ARCH ($FORMATS)"
 
 # The man-and-completions example writes cadcraft-cli's man pages and shell completions below. It
 # is built in its own cargo run: built with the binaries, its dev-dependencies' features would be
@@ -126,7 +126,7 @@ fi
 
 # ---- AppImage -----------------------------------------------------------------------------------
 if has appimage; then
-  APPDIR="$WORK/CADCraft.AppDir"
+  APPDIR="$WORK/crocwork CAD.AppDir"
   cp -R "$STAGE" "$APPDIR"
   ln -s usr/bin/cadcraft "$APPDIR/AppRun"
   cp "$HERE/$APP_ID.desktop" "$APPDIR/$APP_ID.desktop"

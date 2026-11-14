@@ -1,4 +1,4 @@
-//! CADCraft desktop app.
+//! crocwork CAD desktop app.
 //!
 //! Usage: `cadcraft [--control <port>] [--sample] [files…]` (`cadcraft --help` lists the rest; see [`launch_args`])
 //!
@@ -65,7 +65,7 @@ impl App {
         };
         if let Err(error) = result {
             if self.workspace_error.as_ref() != Some(&error) {
-                eprintln!("CADCraft workspace: {error}");
+                eprintln!("crocwork CAD workspace: {error}");
                 self.cad.set_status(format!("Workspace could not be saved: {error}"));
                 self.workspace_error = Some(error);
             }
@@ -227,7 +227,7 @@ fn restores_window() -> bool {
 fn window_options(restoring: bool) -> eframe::NativeOptions {
     eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("CADCraft")
+            .with_title("crocwork CAD")
             .with_inner_size([1600.0, 1000.0])
             .with_min_inner_size([900.0, 560.0])
             .with_drag_and_drop(true)
@@ -242,7 +242,7 @@ fn window_options(restoring: bool) -> eframe::NativeOptions {
         // (#1129); later launches go back where the window was (eframe would centre over that).
         // Wayland compositors place windows themselves.
         centered: !restoring,
-        // CADCraft installs its own capped font chain (`theme::install_fonts`); never run
+        // crocwork CAD installs its own capped font chain (`theme::install_fonts`); never run
         // system-font discovery as a hidden fallback.
         system_font_fallback: false,
         // A stencil buffer clips the contents of clipped layout viewports on the GPU.
@@ -285,7 +285,7 @@ fn main() -> eframe::Result {
     #[cfg(not(target_arch = "wasm32"))]
     if let Some(done) = craft_update::self_update::finish(&cadcraft_ui_egui::UPDATE_APP, &std::env::args_os().skip(1).collect::<Vec<_>>()) {
         if let Err(e) = done {
-            eprintln!("CADCraft update helper failed: {e}");
+            eprintln!("crocwork CAD update helper failed: {e}");
             std::process::exit(1);
         }
         return Ok(());
@@ -353,7 +353,7 @@ fn main() -> eframe::Result {
             b.with_x11();
         }));
     }
-    // macOS: Quit CADCraft (Cmd+Q), the Dock's Quit and logout end the app through AppKit's
+    // macOS: Quit crocwork CAD (Cmd+Q), the Dock's Quit and logout end the app through AppKit's
     // terminate, which would skip the unsaved-changes prompt (#2157). winit turns each into a
     // close request for the window instead, so it asks first, as the close button does.
     #[cfg(target_os = "macos")]
@@ -364,7 +364,7 @@ fn main() -> eframe::Result {
         }));
     }
     eframe::run_native(
-        "CADCraft",
+        "crocwork CAD",
         options,
         Box::new(move |cc| {
             let mut app = CadApp::new(Session::empty(), services());
@@ -380,7 +380,7 @@ fn main() -> eframe::Result {
             }
             app.set_system_cursor_default(vars.system_cursor == Switch::On);
             if let Some(error) = &workspace_error {
-                eprintln!("CADCraft workspace: {error}");
+                eprintln!("crocwork CAD workspace: {error}");
                 app.set_status(error);
             }
             app.system_languages = vars.locale.map(|s| vec![s]).unwrap_or_else(|| sys_locale::get_locales().collect());

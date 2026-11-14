@@ -2,7 +2,7 @@
 
 > **Last reviewed:** 2026-10-24 · **Last updated:** 2026-10-24 · **Change:** minor (re-audit against main 41d9b5e95: SpaceMouse 2D navigation, magnifier option, winit PR state, plotter devices; the 45% is not re-measured; previously: re-audit against main e707ab4d: SpaceMouse 2D navigation, magnifier option, winit PR state, plotter devices; the 45% is not re-measured) · **Target:** Autodesk AutoCAD 2027 (Mac and Windows)
 
-The hardware AutoCAD uses and how CADCraft compares, per platform. Work items:
+The hardware AutoCAD uses and how crocwork CAD compares, per platform. Work items:
 [gaps.md](gaps.md#hardware).
 
 **Headline (estimated): hardware ≈ 45%.** 2D GPU drawing, HiDPI and trackpads are covered on
@@ -14,7 +14,7 @@ Measured from the source on 2026-10-10 (`crates/ui-egui/src/gpu.rs`, `canvas.rs`
 `apps/cadcraft/src/graphics.rs`, `apps/cadcraft-web`); AutoCAD's side from Autodesk's system
 requirements and graphics-performance documentation. Nothing was benchmarked in this pass.
 
-| Feature | AutoCAD 2027 | CADCraft macOS | CADCraft Windows | CADCraft Linux / FreeBSD | CADCraft web |
+| Feature | AutoCAD 2027 | crocwork CAD macOS | crocwork CAD Windows | crocwork CAD Linux / FreeBSD | crocwork CAD web |
 |---|---|---|---|---|---|
 | GPU canvas for 2D | yes (hardware acceleration, GPU smoothing, high-quality geometry) | wgpu on Metal | wgpu on DirectX 12 by default (`WGPU_BACKEND` overrides; GL avoided after AMD crashes, #31) | wgpu on Vulkan (or GL) | WebGPU, WebGL2 fallback |
 | CPU fallback | software mode | yes (`tiny-skia` rasteriser) | yes | yes | — |

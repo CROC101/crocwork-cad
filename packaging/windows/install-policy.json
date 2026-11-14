@@ -1,7 +1,7 @@
 {
   "id": "cadcraft",
-  "name": "CADCraft",
-  "upgradeCode": "119D7D76-0167-4A9E-8F37-09DA0235F68E",
+  "name": "crocwork CAD",
+  "upgradeCode": "3358D9EC-8CF6-5D9D-885F-0CBFCDD3B402",
   "sources": [
     "cadcraft.wxs"
   ],
@@ -30,24 +30,24 @@
     [
       "-1",
       "Software\\Classes\\.dxf\\OpenWithProgids",
-      "CADCraft.Drawing",
+      "crocwork CAD.Drawing",
       ""
     ],
     [
       "-1",
       "Software\\Classes\\.dwg\\OpenWithProgids",
-      "CADCraft.Drawing",
+      "crocwork CAD.Drawing",
       ""
     ],
     [
       "-1",
-      "Software\\Classes\\CADCraft.Drawing\\shell\\open\\command",
+      "Software\\Classes\\crocwork CAD.Drawing\\shell\\open\\command",
       "",
       "\"[#CadcraftExe]\" \"%1\""
     ],
     [
       "-1",
-      "Software\\Learning Machines LLC\\CADCraft",
+      "Software\\crocwork\\crocwork CAD",
       "DesktopShortcut",
       "1"
     ]

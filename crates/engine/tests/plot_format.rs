@@ -55,12 +55,12 @@ fn a_device_that_disagrees_with_the_extension_is_refused() {
     let dir = std::env::temp_dir().join(format!("cadcraft-plot-format-mismatch-{}", std::process::id()));
     std::fs::create_dir_all(&dir).unwrap();
     let out = dir.join("m.pdf");
-    let e = s.execute("plot", &json!({ "path": out.to_string_lossy(), "layout": "Model", "device": "CADCraft PNG" })).unwrap_err();
-    assert!(e.to_string().contains("CADCraft PNG") && e.to_string().contains("pdf"), "{e}");
+    let e = s.execute("plot", &json!({ "path": out.to_string_lossy(), "layout": "Model", "device": "crocwork CAD PNG" })).unwrap_err();
+    assert!(e.to_string().contains("crocwork CAD PNG") && e.to_string().contains("pdf"), "{e}");
     assert!(!out.exists(), "nothing is written");
     // A device that agrees works, and "None" leaves the extension in charge.
     let ok = dir.join("m.png");
-    let r = s.execute("plot", &json!({ "path": ok.to_string_lossy(), "layout": "Model", "device": "CADCraft PNG" })).unwrap();
+    let r = s.execute("plot", &json!({ "path": ok.to_string_lossy(), "layout": "Model", "device": "crocwork CAD PNG" })).unwrap();
     assert_eq!((r["format"].as_str(), magic(&ok)), (Some("png"), b"\x89PNG\r".to_vec()));
     let none = dir.join("n.svg");
     s.execute("plot", &json!({ "path": none.to_string_lossy(), "layout": "Model", "device": "None" })).unwrap();

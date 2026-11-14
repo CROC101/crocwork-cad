@@ -320,7 +320,7 @@ fn plot_help_names_the_device_and_the_built_in_devices() {
         assert!(help.contains("device?"), "{id}: {help}");
     }
     let help = crate::find_command("plot").map(|c| c.params).unwrap_or_default();
-    for name in ["CADCraft PDF", "CADCraft PNG", "CADCraft SVG"] {
+    for name in ["crocwork CAD PDF", "crocwork CAD PNG", "crocwork CAD SVG"] {
         assert!(super::super::plotters::find_device(name).is_some(), "{name} is not a device");
         assert!(help.contains(name), "plot help lacks {name}");
     }
@@ -352,7 +352,7 @@ fn plot_path_extension_picks_the_format_like_export() {
     let e = s.execute("plot", &json!({"path": path("noext")})).unwrap_err().to_string();
     assert!(e.contains("png") && e.contains("svg") && e.contains("pdf"), "{e}");
     assert!(!dir.join("noext").exists());
-    let e = s.execute("plot", &json!({"path": path("y.png"), "device": "CADCraft PDF"})).unwrap_err().to_string();
+    let e = s.execute("plot", &json!({"path": path("y.png"), "device": "crocwork CAD PDF"})).unwrap_err().to_string();
     assert!(e.contains("writes pdf") && e.contains("png"), "{e}");
     // A device that resolves to none, or a null/unknown `output`, names no format: the refusal stands.
     for p in [

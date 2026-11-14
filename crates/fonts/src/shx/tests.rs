@@ -10,7 +10,7 @@ use crate::{TextFont, TextParams};
 
 /// A small dual-orientation text font: 6 units above, 2 below.
 pub(crate) const TEXT_FONT: &str = "\
-;; CADCraft test font (written for the tests)
+;; crocwork CAD test font (written for the tests)
 *0,4,cadcraft test
 6,2,2,0
 *32,3,SPACE
@@ -426,7 +426,7 @@ fn names_and_lookup() {
     assert_eq!(table::key("txt").as_deref(), Some("txt.shx"));
     assert_eq!(table::key(r"C:\Fonts\Simplex.shx").as_deref(), Some("simplex.shx"));
     assert_eq!(table::key("../x/gbcbig.shx").as_deref(), Some("gbcbig.shx"));
-    for n in ["", "arial.ttf", "CADCraft Stroke", "Times New Roman", ".shx", "a\u{0}.shx"] {
+    for n in ["", "arial.ttf", "crocwork CAD Stroke", "Times New Roman", ".shx", "a\u{0}.shx"] {
         assert_eq!(table::key(n), None, "{n:?}");
     }
     assert!(register("not-a-font.ttf", &compile(TEXT_FONT).unwrap()).is_err());
