@@ -349,7 +349,7 @@ fn about(ctx: &egui::Context, open: &mut bool) {
                     ui.label(crate::tl!("Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust."));
                     ui.add_space(6.0);
                     ui.label(RichText::new(crate::tl!("One of the Crafting Apps by the crocwork team and community.")).color(t.text_dim));
-                    ui.hyperlink_to("getartcraft.com/apps/cadcraft", "https://github.com/CROC101/crocwork-cad");
+                    ui.hyperlink_to("github.com/CROC101/crocwork-cad", "https://github.com/CROC101/crocwork-cad");
                     ui.hyperlink_to(crate::tl!("Join us on Discord"), "https://github.com/CROC101/crocwork-cad");
                     ui.add_space(6.0);
                     ui.label(RichText::new(crate::tl!("MIT OR Apache-2.0. Not affiliated with Autodesk, Inc.")).small().color(t.text_faint));
