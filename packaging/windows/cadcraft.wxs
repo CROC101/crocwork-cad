@@ -63,9 +63,9 @@
 
         <RegistryValue Root="HKMU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\cadcraft.exe" Value="[#CadcraftExe]" Type="string" />
         <RegistryValue Root="HKMU" Key="Software\Classes\Applications\cadcraft.exe\shell\open\command" Value="&quot;[#CadcraftExe]&quot; &quot;%1&quot;" Type="string" />
-        <RegistryValue Root="HKMU" Key="Software\Classes\.dxf\OpenWithProgids" Name="crocwork CAD.Drawing" Value="" Type="string" />
-        <RegistryValue Root="HKMU" Key="Software\Classes\.dwg\OpenWithProgids" Name="crocwork CAD.Drawing" Value="" Type="string" />
-        <RegistryValue Root="HKMU" Key="Software\Classes\crocwork CAD.Drawing\shell\open\command" Value="&quot;[#CadcraftExe]&quot; &quot;%1&quot;" Type="string" />
+        <RegistryValue Root="HKMU" Key="Software\Classes\.dxf\OpenWithProgids" Name="CADCraft.Drawing" Value="" Type="string" />
+        <RegistryValue Root="HKMU" Key="Software\Classes\.dwg\OpenWithProgids" Name="CADCraft.Drawing" Value="" Type="string" />
+        <RegistryValue Root="HKMU" Key="Software\Classes\CADCraft.Drawing\shell\open\command" Value="&quot;[#CadcraftExe]&quot; &quot;%1&quot;" Type="string" />
       <RegistryValue Root="HKMU" Key="Software\crocwork CAD" Name="InstallDir" Value="[INSTALLFOLDER]" Type="string" />
       </Component>
 

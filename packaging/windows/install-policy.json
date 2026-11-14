@@ -30,18 +30,18 @@
     [
       "-1",
       "Software\\Classes\\.dxf\\OpenWithProgids",
-      "crocwork CAD.Drawing",
+      "CADCraft.Drawing",
       ""
     ],
     [
       "-1",
       "Software\\Classes\\.dwg\\OpenWithProgids",
-      "crocwork CAD.Drawing",
+      "CADCraft.Drawing",
       ""
     ],
     [
       "-1",
-      "Software\\Classes\\crocwork CAD.Drawing\\shell\\open\\command",
+      "Software\\Classes\\CADCraft.Drawing\\shell\\open\\command",
       "",
       "\"[#CadcraftExe]\" \"%1\""
     ],

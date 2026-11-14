@@ -126,7 +126,7 @@ fi
 
 # ---- AppImage -----------------------------------------------------------------------------------
 if has appimage; then
-  APPDIR="$WORK/crocwork CAD.AppDir"
+  APPDIR="$WORK/CADCraft.AppDir"
   cp -R "$STAGE" "$APPDIR"
   ln -s usr/bin/cadcraft "$APPDIR/AppRun"
   cp "$HERE/$APP_ID.desktop" "$APPDIR/$APP_ID.desktop"
