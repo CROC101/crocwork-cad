@@ -116,7 +116,7 @@ impl NativeMenu {
         while let Ok(ev) = self.events.try_recv() {
             if let Some((cmd, _, _)) = self.items.get(ev.id.as_ref()) {
                 if cmd == "ui.discord" {
-                    ctx.open_url(egui::OpenUrl::new_tab("https://github.com/CROC101/crocwork-cad"));
+                    ctx.open_url(egui::OpenUrl::new_tab("https://discord.gg/sNYsVbh3v"));
                 } else {
                     menus::activate_native(app, ctx, &cmd.clone());
                 }
